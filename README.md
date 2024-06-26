@@ -1,7 +1,3 @@
-Certainly! Here's a suggested README content for your AniMania page, including details about your service and the usage of the Jikan API:
-
----
-
 # AniMania
 
 Welcome to AniMania, your ultimate destination for all things anime! Whether you're looking for top anime recommendations, personalized lists, or the latest episode schedules, AniMania has you covered.
