@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-color: #F7F7F7;
+  line-height: 1.6;
+  width: 100%;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.top {
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.top header .main_page_button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+.top header .main_page_button .page_title {
+  padding: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: #FF6B6B;
+  font-size: 2rem;
+  margin: 0;
+}
+.top .navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.top .navigation a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+.top .navigation a:hover {
+  color: #4ECDC4;
+}
+.top .navigation a h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card-title {
+  height: 120px;
+}
+
+.searchZone {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  background-image: url("../img/1331368.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.searchZone::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.searchZone #searchBar {
+  width: 40%;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 20px;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.searchZone .animeSearchButton {
+  height: 50px;
+  border: none;
+  background-color: #4ECDC4;
+  cursor: pointer;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+.searchZone .animeSearchButton .search_icon {
+  font-size: 20px;
+  color: #fff;
+}
+.searchZone .animeSearchButton:hover {
+  background-color: #33b5ac;
+}
+
+.top_animes {
+  font-size: 2.5rem;
+  color: #FF6B6B;
+  margin-top: 3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+.top_animes::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: #4ECDC4;
+  border-radius: 2px;
+}
+
+.topAnimes {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  width: 100%;
+  justify-items: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  max-width: 350px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card .titleParent {
+  padding: 10px 0;
+}
+.card .titleParent h5 {
+  font-size: 1.4rem;
+  color: #4ECDC4;
+  margin-bottom: 10px;
+}
+.card p {
+  padding-bottom: 15px;
+  line-height: 1.4;
+}
+.card .btn {
+  border: none;
+  border-radius: 10px;
+  width: 120px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.card .btn:hover {
+  background-color: #0056b3;
+}
+
+.loading, .no-results {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #eaeaea;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 600px) {
+  .top {
+    padding: 10px 20px;
+  }
+  .top header .main_page_button .page_title {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+  .top .navigation {
+    gap: 20px;
+  }
+  .top .navigation a h3 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .top {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=anime.css.map */

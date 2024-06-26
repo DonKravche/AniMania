@@ -1,0 +1,235 @@
+// Variables
+$primary-color: #FF6B6B;
+$secondary-color: #4ECDC4;
+$text-color: #333;
+$background-color: #F7F7F7;
+$btn-color: #007bff;
+$btn-hover-color: #0056b3;
+
+// Base styles
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+// Navigation styles
+.top {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    header {
+        .main_page_button {
+            border: none;
+            cursor: pointer;
+            background: none;
+
+            .page_title {
+                padding: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+                color: $primary-color;
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+
+        a {
+            text-decoration: none;
+            color: $text-color;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $secondary-color;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+// Middle Image
+.middleImg {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-image: url('/img/search_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+}
+
+// Top Animes
+.top_animes {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background-color: $secondary-color;
+        border-radius: 2px;
+    }
+}
+
+.topAnimes {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    width: 100%;
+    justify-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 350px;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .titleParent {
+        padding: 10px 0;
+        h5 {
+            font-size: 1.4rem;
+            color: $secondary-color;
+            margin-bottom: 10px;
+        }
+    }
+
+    p {
+        padding-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .btn {
+        border: none;
+        border-radius: 10px;
+        width: 120px;
+        height: 50px;
+        background-color: $btn-color;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $btn-hover-color;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: darken($background-color, 5%);
+}
+
+@media screen and (max-width: 750px) {
+    .top {
+        padding: 10px 20px;
+
+        header {
+            .main_page_button {
+                .page_title {
+                    font-size: 1.5rem;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .navigation {
+            gap: 20px;
+
+            a {
+                h3 {
+                    font-size: 1rem; 
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        flex-direction: column;
+    }
+}

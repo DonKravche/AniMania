@@ -1,0 +1,174 @@
+// Variables
+$primary-color: #FF6B6B;
+$secondary-color: #4ECDC4;
+$text-color: #333;
+$background-color: #F7F7F7;
+
+// Base styles
+body {
+    font-family: 'Arial', sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+// Navigation styles
+.top {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    header {
+        width: 20%;
+        .main_page_button {
+            border: none;
+            cursor: pointer;
+            background: none;
+
+            .page_title {
+                padding: 20px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                text-align: center;
+                color: $primary-color;
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+    }
+
+    .navigation {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: end;
+        margin-right: 100px;
+
+        a {
+            text-decoration: none;
+            color: $text-color;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $secondary-color;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+// FAQ styles
+.faq-container {
+    max-width: 800px;
+    margin: 7rem auto 2rem;
+    padding: 1rem;
+
+    .faq-header {
+        color: $primary-color;
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .faq-subheader {
+        color: darken($text-color, 10%);
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    h2 {
+        color: $secondary-color;
+        margin-top: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: darken($background-color, 5%);
+}
+
+// Animations
+.faq-item {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+
+        header {
+            width: 100%;
+            margin-bottom: 15px;
+
+            .main_page_button {
+                width: 100%;
+
+                .page_title {
+                    font-size: 1.8rem;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .navigation {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-right: 0;
+
+            a {
+                h3 {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    .faq-container {
+        padding-top: 150px;
+    }
+}

@@ -1,0 +1,183 @@
+// Variables
+$primary-color: #FF6B6B;
+$secondary-color: #4ECDC4;
+$text-color: #333;
+$background-color: #F7F7F7;
+$btn-color: #007bff;
+$btn-hover-color: #0056b3;
+
+// Base styles
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+// View container
+.view {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    max-width: 1200px;
+
+    .left-image,
+    .right-logIn {
+        flex: 1;
+    }
+}
+
+// Left Image
+.left-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Right Login
+.right-logIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+
+        h2 {
+            text-align: center;
+            color: $primary-color;
+        }
+
+        p {
+            margin: 0;
+            font-size: 16px;
+            color: $text-color;
+        }
+
+        #email,
+        #password {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        #button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: $btn-color;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: $btn-hover-color;
+            }
+        }
+
+        a {
+            text-align: center;
+            color: $primary-color;
+            text-decoration: none;
+            margin-top: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+    padding: 1.5rem;
+    background-color: darken($background-color, 5%);
+}
+
+// Responsive styles
+@media screen and (max-width: 768px) {
+    .view {
+        flex-direction: column;
+
+        .left-image,
+        .right-register {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .left-image img {
+            border-radius: 0 0 10px 10px;
+        }
+
+        .right-register {
+            height: 100%;
+            margin-top: 100px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        form div {
+            flex-direction: column;
+            align-items: flex-start;
+
+            p {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .left-image {
+        width: 500px;
+        img {
+            object-position: left;
+        }
+    }
+}
+
